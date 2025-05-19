@@ -13,3 +13,14 @@ It is now in development and does not working.
 ```
 ### Project overview
 It crawls github and look at for free repos.
+
+### Installing
+```bash
+git clone https://www.github.com/0l-bitly/ai-trainer
+```
+```bash
+cd ai-trainer/
+```
+```bash
+python3 main.py
+```
