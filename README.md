@@ -9,10 +9,59 @@ It is now in development and does not working.
 ```tree
 /README.md
 /LICENCE
-/main.py
+/src
+--/main.py
+--/trainer.py
+--/funcs.py
+--/compiler.py
+--/crawler.py
+--/src
+----/{random-generated-name}-source-code.{extension}
+----/sums
+------/{random-generated-name}-sum.sum
+--/cfg
+----/config.json
+----/licenses.json
+----/compilers.json
+--/comp
+---/{languages-compilers-bins}
+--/dist
+----/{random-generated-names-compiled-bins}
 ```
 ### Project overview
-It crawls github and look at for free repos.
+It crawls github and look at for free repos. (You are limited by your rate limit)
+config.json file (read by main.py):
+```json
+{
+    "compile": true,
+    "train": false,
+    "sum" : false,
+    "compilerscfgfile": "./cfg/compilers.json",
+    "licensescfgfile": "./cfg/licenses.json",
+    "gitpath": "/usr/bin/git",
+    "outdir": "./dist/",
+    "auth": ["API_KEY", "OTHER_API_KEY"]
+}
+```
+licenses.json file :
+```json
+{
+    "licenses" : {
+        "authorised_license_name": true, // If the license is authorised, "true", else "false"
+        "forbidden_license_name": false
+    }
+
+}
+```
+compilers.json file :
+```json
+{
+    "compilers" : {
+        "langage_name" : ["compiler_name", "regex_for_the_command"]
+    },
+    "compilerspath" : "./comp/"
+}
+```
 
 ### Installing
 ```bash

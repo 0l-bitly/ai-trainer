@@ -1,0 +1,11 @@
+{
+    "compile": true,
+    "train": false,
+    "sum" : false,
+    "crawl": true,
+    "compilerscfgfile": "./cfg/compilers.json",
+    "licensescfgfile": "./cfg/licenses.json",
+    "gitpath": "/usr/bin/git",
+    "outdir": "./dist/",
+    "auth": ["API_KEY", "OTHER_API_KEY"]
+}

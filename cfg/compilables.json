@@ -1,0 +1,19 @@
+{
+    "compilables": [
+        {"language": "C", "extension": ".c"},
+        {"language": "C++", "extension": ".cpp"},
+        {"language": "Rust", "extension": ".rs"},
+        {"language": "Go", "extension": ".go"},
+        {"language": "D", "extension": ".d"},
+        {"language": "Swift", "extension": ".swift"},
+        {"language": "Ada", "extension": ".adb"},
+        {"language": "Fortran", "extension": ".f90"},
+        {"language": "Pascal", "extension": ".pas"},
+        {"language": "Nim", "extension": ".nim"},
+        {"language": "Haskell", "extension": ".hs"},
+        {"language": "OCaml", "extension": ".ml"},
+        {"language": "F#", "extension": ".fs"},
+        {"language": "Assembly", "extension": ".asm"},
+        {"language": "Crystal", "extension": ".cr"}
+    ]
+}
