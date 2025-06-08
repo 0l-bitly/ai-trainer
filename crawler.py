@@ -1,5 +1,19 @@
+import re
 import requests
 import time
+
+def checklic(data, allowed_licenses):
+    """Vérifie les dépôts et renvoie ceux dont la licence est dans la liste des licences autorisées après nettoyage."""
+    if isinstance(allowed_licenses[0], list):
+        allowed_licenses = [item for sublist in allowed_licenses for item in sublist]
+    cleaned_allowed_licenses = [re.sub(r'[\s\-.]', '', lic).lower() for lic in allowed_licenses]
+    filtered_repositories = []
+    for item in data:
+        if item.get("license") is not None:
+            cleaned_license_name = re.sub(r'[\s\-.]', '', item["license"]["name"]).lower()
+            if cleaned_license_name in cleaned_allowed_licenses:
+                filtered_repositories.append(item)
+    return filtered_repositories
 
 def clear(data):
     fields = [
@@ -15,12 +29,16 @@ def clear(data):
     ]
     filtered = []
     for item in data:
-        if not item.get("private") and not item.get("archived") and not item.get("disabled") and item.get("license") is not None and item.get("language") is not None:
+        if (not item.get("private") and 
+            not item.get("archived") and 
+            not item.get("disabled") and 
+            item.get("license") is not None and 
+            item.get("language") is not None):
             filtered_item = {key: item[key] for key in fields if key in item}
             filtered.append(filtered_item)
     return filtered
 
-def main(languages, keyword, token=None):
+def main(languages, keyword, allowed_licenses, token=None):
     repositories_data = []
     url = "https://api.github.com/search/repositories"
     headers = {}
@@ -40,4 +58,5 @@ def main(languages, keyword, token=None):
             print(f"Erreur lors de la recherche de dépôts pour {language}: {e}")
         time.sleep(1)
     repositories_data = clear(repositories_data)
-    return repositories_data
+    filtered_repositories = checklic(repositories_data, allowed_licenses)
+    return filtered_repositories

@@ -110,10 +110,10 @@ if __name__ == "__main__":
         if args.test:
             print("Mode: Test")
             if args.token:
-                sol = crawl_main("github", ["python"], args.token)
+                sol = crawl_main("github", ["python"], licensesdt, args.token)
             else:
-                sol = crawl_parser("github", ["python"])
+                sol = crawl_parser("github", ["python"], licensesdt)
             printjson(sol)
         else:
-            print("Mode: Test")
-            #crawl_main()
+            print("Function none implemented.")
+            #crawl_main() to do
