@@ -3,6 +3,20 @@ import argparse
 import os
 import json
 from crawler import main as crawl_main
+from funcs import genrandstr
+from funcs import printjson
+
+def parselic(file_path='./cfg/licenses.json'):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    free_licenses = []
+    non_free_licenses = []
+    for license_name, is_free in data['licenses'].items():
+        if is_free:
+            free_licenses.append(license_name)
+        else:
+            non_free_licenses.append(license_name)
+    return free_licenses, non_free_licenses
 
 def loading(config_path='./cfg/config.json'):
     try:
@@ -64,7 +78,8 @@ if __name__ == "__main__":
     config_parser.add_argument('--outdir', type=str, help='Répertoire de sortie')
     config_parser.add_argument('--sum', type=bool, help='Activer le résumé')
     crawl_parser = subparsers.add_parser('crawl', help='Lancer le crawl')
-    crawl_parser.add_argument('--test', type=int, help='Lancer en mode test')
+    crawl_parser.add_argument('--test', action='store_true', help='Lancer en mode test')
+    crawl_parser.add_argument('--token', type=str, help='Github API Token pour une meilleure rate limit')
     args = parser.parse_args()
 
     if args.command == 'config':
@@ -84,10 +99,21 @@ if __name__ == "__main__":
         if args.sum is not None:
             os.environ['SUM'] = str(args.sum).lower()
 
+    licensesdt = parselic()
+    print("Licenses :", licensesdt)
     compilable_languages = loadlangs()
     print("Langages compilables :", compilable_languages)
 
     if args.command == 'crawl':
         main()
         print("Starting crawl.")
-        #crawl_main()
+        if args.test:
+            print("Mode: Test")
+            if args.token:
+                sol = crawl_main("github", ["python"], args.token)
+            else:
+                sol = crawl_parser("github", ["python"])
+            printjson(sol)
+        else:
+            print("Mode: Test")
+            #crawl_main()

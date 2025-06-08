@@ -1,6 +1,0 @@
-{
-    "compilers" : {
-        "langage_name" : ["compiler_name", "regex_for_the_command"]
-    },
-    "compilerspath" : "./comp/"
-}

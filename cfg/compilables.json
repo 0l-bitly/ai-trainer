@@ -15,5 +15,9 @@
         {"language": "F#", "extension": ".fs"},
         {"language": "Assembly", "extension": ".asm"},
         {"language": "Crystal", "extension": ".cr"}
-    ]
+    ],
+    "compilers" : {
+        "langage_name" : ["compiler_name", "regex_for_the_command"]
+    },
+    "compilerspath" : "./comp/"
 }
