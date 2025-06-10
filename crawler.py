@@ -1,9 +1,10 @@
 import re
 import requests
 import time
+import os
+import subprocess
 
 def checklic(data, allowed_licenses):
-    """Vérifie les dépôts et renvoie ceux dont la licence est dans la liste des licences autorisées après nettoyage."""
     if isinstance(allowed_licenses[0], list):
         allowed_licenses = [item for sublist in allowed_licenses for item in sublist]
     cleaned_allowed_licenses = [re.sub(r'[\s\-.]', '', lic).lower() for lic in allowed_licenses]
@@ -39,6 +40,9 @@ def clear(data):
     return filtered
 
 def main(languages, keyword, allowed_licenses, token=None):
+    if os.getenv("CRWL") == False:
+        print("Crawl disabled. If you want to enable it, try python3 main.py config --crawl true")
+        return None
     repositories_data = []
     url = "https://api.github.com/search/repositories"
     headers = {}
@@ -60,3 +64,8 @@ def main(languages, keyword, allowed_licenses, token=None):
     repositories_data = clear(repositories_data)
     filtered_repositories = checklic(repositories_data, allowed_licenses)
     return filtered_repositories
+
+def download() {
+    print("Downloading repositories.")
+    
+}

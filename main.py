@@ -5,6 +5,7 @@ import json
 from crawler import main as crawl_main
 from funcs import genrandstr
 from funcs import printjson
+from funcs import readkeywords
 
 def parselic(file_path='./cfg/licenses.json'):
     with open(file_path, 'r') as file:
@@ -79,7 +80,9 @@ if __name__ == "__main__":
     config_parser.add_argument('--sum', type=bool, help='Activer le résumé')
     crawl_parser = subparsers.add_parser('crawl', help='Lancer le crawl')
     crawl_parser.add_argument('--test', action='store_true', help='Lancer en mode test')
-    crawl_parser.add_argument('--token', type=str, help='Github API Token pour une meilleure rate limit')
+    crawl_parser.add_argument('--token', '-t', type=str, help='Github API Token pour une meilleure rate limit')
+    crawl_parser.add_argument('--keywords', '-k', type=str, help='Mots-clés de recherche (chemin de fichiers de mots-clés)')
+    crawl_parser.add_argument('--')
     args = parser.parse_args()
 
     if args.command == 'config':
@@ -98,12 +101,8 @@ if __name__ == "__main__":
             os.environ['OUTDIR'] = args.outdir
         if args.sum is not None:
             os.environ['SUM'] = str(args.sum).lower()
-
     licensesdt = parselic()
-    print("Licenses :", licensesdt)
     compilable_languages = loadlangs()
-    print("Langages compilables :", compilable_languages)
-
     if args.command == 'crawl':
         main()
         print("Starting crawl.")
@@ -113,7 +112,14 @@ if __name__ == "__main__":
                 sol = crawl_main("github", ["python"], licensesdt, args.token)
             else:
                 sol = crawl_parser("github", ["python"], licensesdt)
+            if sol is None:
+                os.exit(0)
             printjson(sol)
+
+        if args.keywords or args.k:
+            keywords = readkeywords(args.keywords or args.k)
+            print(keywords)
+
         else:
-            print("Function none implemented.")
-            #crawl_main() to do
+            print(f"Crawling main. File: {keywords} ")
+            crawl_main()
