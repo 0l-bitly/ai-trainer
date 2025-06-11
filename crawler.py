@@ -82,6 +82,7 @@ def execmd(command):
             text=True,
             check=True
         )
-        print("Sortie :", result.stdout)
     except subprocess.CalledProcessError as e:
         print("Error :", e.stderr)
+        return result.stderr
+    return result.stdout
