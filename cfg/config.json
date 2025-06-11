@@ -3,6 +3,7 @@
     "train": false,
     "sum" : false,
     "crawl": true,
+    "down": true,
     "compilerscfgfile": "./cfg/compilers.json",
     "licensescfgfile": "./cfg/licenses.json",
     "gitpath": "/usr/bin/git",

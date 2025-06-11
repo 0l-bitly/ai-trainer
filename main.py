@@ -2,6 +2,7 @@ import requests
 import argparse
 import os
 import json
+import shutil
 from crawler import main as crawl_main
 from funcs import genrandstr
 from funcs import printjson
@@ -50,6 +51,7 @@ def setenvvars(config):
     os.environ['TRAIN'] = str(config.get('train', False)).lower()
     os.environ['OUTDIR'] = config.get('outdir', '')
     os.environ['SUM'] = str(config.get('sum', False)).lower()
+    os.environ['DOWN'] = str(config.get('download', False)).lower()
 
 def printcfg():
     print("Configuration chargée avec succès.")
@@ -60,6 +62,7 @@ def printcfg():
     print(f"TRAIN: {os.environ['TRAIN']}")
     print(f"OUTDIR: {os.environ['OUTDIR']}")
     print(f"SUM: {os.environ['SUM']}")
+    print(f"DOWNLOAD: {os.environ['DOWN']}")
 
 def main():
     print("Démarrage de ai-trainer version 1.0.")
@@ -67,7 +70,17 @@ def main():
     setenvvars(config)
     printcfg()
 
+def init():
+    if shutil.which("git") is None:
+        print("Warning: Git not found. The repositories could not be downloaded.")
+        print("Setting download to false.")
+        os.environ['DOWN'] = str(False).lower()
+        print("Setted download to false.")
+    else:
+        print("Git verification O.K.")
+
 if __name__ == "__main__":
+    init()
     parser = argparse.ArgumentParser(description="AI Trainer Configuration")
     subparsers = parser.add_subparsers(dest='command')
     config_parser = subparsers.add_parser('config', help='Modifier la configuration')
@@ -78,11 +91,11 @@ if __name__ == "__main__":
     config_parser.add_argument('--train', type=bool, help='Activer l\'entraînement')
     config_parser.add_argument('--outdir', type=str, help='Répertoire de sortie')
     config_parser.add_argument('--sum', type=bool, help='Activer le résumé')
+    config_parser.add_argument('--download', type=bool, help='Activer le téléchargement')
     crawl_parser = subparsers.add_parser('crawl', help='Lancer le crawl')
     crawl_parser.add_argument('--test', action='store_true', help='Lancer en mode test')
     crawl_parser.add_argument('--token', '-t', type=str, help='Github API Token pour une meilleure rate limit')
     crawl_parser.add_argument('--keywords', '-k', type=str, help='Mots-clés de recherche (chemin de fichiers de mots-clés)')
-    crawl_parser.add_argument('--')
     args = parser.parse_args()
 
     if args.command == 'config':
@@ -115,11 +128,9 @@ if __name__ == "__main__":
             if sol is None:
                 os.exit(0)
             printjson(sol)
-
         if args.keywords or args.k:
             keywords = readkeywords(args.keywords or args.k)
             print(keywords)
-
         else:
             print(f"Crawling main. File: {keywords} ")
-            crawl_main()
+            #crawl_main()

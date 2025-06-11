@@ -39,6 +39,11 @@ def clear(data):
             filtered.append(filtered_item)
     return filtered
 
+def download(json):
+    print("Downloading repositories.")
+    print(json)
+    #execmd([])
+
 def main(languages, keyword, allowed_licenses, token=None):
     if os.getenv("CRWL") == False:
         print("Crawl disabled. If you want to enable it, try python3 main.py config --crawl true")
@@ -59,13 +64,24 @@ def main(languages, keyword, allowed_licenses, token=None):
             response.raise_for_status()
             repositories_data.extend(response.json().get('items', []))
         except requests.exceptions.RequestException as e:
-            print(f"Erreur lors de la recherche de dépôts pour {language}: {e}")
+            print(f"Error searching repositories for {language}: {e}")
         time.sleep(1)
     repositories_data = clear(repositories_data)
     filtered_repositories = checklic(repositories_data, allowed_licenses)
-    return filtered_repositories
+    if os.environ['DOWN'] == False:
+        return filtered_repositories
+    else:
+        download(filtered_repositories)
 
-def download() {
-    print("Downloading repositories.")
-    
-}
+def execmd(command):
+    try:
+        result = subprocess.run(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        print("Sortie :", result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("Error :", e.stderr)
