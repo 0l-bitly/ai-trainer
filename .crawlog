@@ -1,0 +1,567 @@
+Git verification O.K.
+Démarrage de ai-trainer version 1.0.
+Starting crawl.
+Mode: Test
+[
+    {
+        "id": 51942466,
+        "name": "rda-apps-clients",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/NCAR/rda-apps-clients.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 186209201,
+        "name": "autoocr",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/zabir-nabil/autoocr.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 228763415,
+        "name": "chatter-bot",
+        "private": false,
+        "license": {
+            "key": "bsd-3-clause",
+            "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+            "spdx_id": "BSD-3-Clause",
+            "url": "https://api.github.com/licenses/bsd-3-clause",
+            "node_id": "MDc6TGljZW5zZTU="
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/satishchandhu97/chatter-bot.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 362472929,
+        "name": "movie-reviews-classifer-machine-learning-project",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Jupyter Notebook",
+        "clone_url": "https://github.com/Icheka/movie-reviews-classifer-machine-learning-project.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 335974819,
+        "name": "ondewo-proto-compiler",
+        "private": false,
+        "license": {
+            "key": "apache-2.0",
+            "name": "Apache License 2.0",
+            "spdx_id": "Apache-2.0",
+            "url": "https://api.github.com/licenses/apache-2.0",
+            "node_id": "MDc6TGljZW5zZTI="
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Shell",
+        "clone_url": "https://github.com/ondewo/ondewo-proto-compiler.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 274472671,
+        "name": ".config",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Shell",
+        "clone_url": "https://github.com/zszszszsz/.config.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 378167328,
+        "name": "05_Python_Files",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Jupyter Notebook",
+        "clone_url": "https://github.com/milaan9/05_Python_Files.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 135214433,
+        "name": "Python-for-beginners",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/mraza007/Python-for-beginners.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 103125708,
+        "name": "Gaming-in-Python",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/jatinmandav/Gaming-in-Python.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 285494133,
+        "name": "ImageRegistrationTutorial",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Jupyter Notebook",
+        "clone_url": "https://github.com/MedicalImageAnalysisTutorials/ImageRegistrationTutorial.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 38234495,
+        "name": "preprocess",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/hplgit/preprocess.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 212799046,
+        "name": "Python-Basics",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/ahammadshawki8/Python-Basics.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 407304330,
+        "name": "sqlite3-incremental-backup",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "C",
+        "clone_url": "https://github.com/nokibsarkar/sqlite3-incremental-backup.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 58790378,
+        "name": "vsphere-automation-sdk-python",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/vmware/vsphere-automation-sdk-python.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 290686772,
+        "name": "tner",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/asahi417/tner.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 274472671,
+        "name": ".config",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Shell",
+        "clone_url": "https://github.com/zszszszsz/.config.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 8824421,
+        "name": "python-rightarrow",
+        "private": false,
+        "license": {
+            "key": "apache-2.0",
+            "name": "Apache License 2.0",
+            "spdx_id": "Apache-2.0",
+            "url": "https://api.github.com/licenses/apache-2.0",
+            "node_id": "MDc6TGljZW5zZTI="
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/kennknowles/python-rightarrow.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 3433829,
+        "name": "Google-Diff-Match-Patch--C--",
+        "private": false,
+        "license": {
+            "key": "apache-2.0",
+            "name": "Apache License 2.0",
+            "spdx_id": "Apache-2.0",
+            "url": "https://api.github.com/licenses/apache-2.0",
+            "node_id": "MDc6TGljZW5zZTI="
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/PhoenixWebGroupJay/Google-Diff-Match-Patch--C--.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 370842098,
+        "name": "build2021-intro-csharp-python",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Jupyter Notebook",
+        "clone_url": "https://github.com/jamesmontemagno/build2021-intro-csharp-python.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 610709932,
+        "name": "make-recipes-in-different-scripting-languages-demo",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Makefile",
+        "clone_url": "https://github.com/lgersman/make-recipes-in-different-scripting-languages-demo.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 620413868,
+        "name": "make-your-won-computer-virus",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/problemsolvewithridoy/make-your-won-computer-virus.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 506880163,
+        "name": "Learn-Microcontroller-With-Esp32-Esp8266",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/MuhammadRaheelNaseem/Learn-Microcontroller-With-Esp32-Esp8266.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 34619020,
+        "name": "Hantek_1025G",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/AIMAtlanta/Hantek_1025G.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 546700555,
+        "name": "monty",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "C",
+        "clone_url": "https://github.com/Bashorun407/monty.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 652233882,
+        "name": "UPlus",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/JavaCoder9721/UPlus.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 371582073,
+        "name": "star-war-game",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/aditya270520/star-war-game.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 418863343,
+        "name": "Library-Management-System",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "CSS",
+        "clone_url": "https://github.com/Agha-Muqarib/Library-Management-System.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 228763415,
+        "name": "chatter-bot",
+        "private": false,
+        "license": {
+            "key": "bsd-3-clause",
+            "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+            "spdx_id": "BSD-3-Clause",
+            "url": "https://api.github.com/licenses/bsd-3-clause",
+            "node_id": "MDc6TGljZW5zZTU="
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/satishchandhu97/chatter-bot.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 465097888,
+        "name": "Combining-two-signals-in-JS-C-Py-PHP-VB-Pl-Rb-Java",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "C#",
+        "clone_url": "https://github.com/Gagniuc/Combining-two-signals-in-JS-C-Py-PHP-VB-Pl-Rb-Java.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 413562212,
+        "name": "Python-Projects",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/Slaha97/Python-Projects.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 973846199,
+        "name": "blexer",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/cstein/blexer.git",
+        "default_branch": "main"
+    },
+    {
+        "id": 255892941,
+        "name": "python_simple_interpreter",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/amupxm/python_simple_interpreter.git",
+        "default_branch": "master"
+    },
+    {
+        "id": 33887650,
+        "name": "bcomp",
+        "private": false,
+        "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdx_id": "MIT",
+            "url": "https://api.github.com/licenses/mit",
+            "node_id": "MDc6TGljZW5zZTEz"
+        },
+        "archived": false,
+        "disabled": false,
+        "language": "Python",
+        "clone_url": "https://github.com/almeida91/bcomp.git",
+        "default_branch": "master"
+    }
+]

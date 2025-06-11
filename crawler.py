@@ -45,7 +45,7 @@ def download(json):
     #execmd([])
 
 def main(languages, keyword, allowed_licenses, token=None):
-    if os.getenv("CRWL") == False:
+    if os.getenv("TRAINER_CRWL") == False:
         print("Crawl disabled. If you want to enable it, try python3 main.py config --crawl true")
         return None
     repositories_data = []
@@ -68,7 +68,7 @@ def main(languages, keyword, allowed_licenses, token=None):
         time.sleep(1)
     repositories_data = clear(repositories_data)
     filtered_repositories = checklic(repositories_data, allowed_licenses)
-    if os.environ['DOWN'] == False:
+    if os.getenv('TRAINER_DOWN') == 'false':
         return filtered_repositories
     else:
         download(filtered_repositories)

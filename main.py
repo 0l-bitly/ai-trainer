@@ -44,25 +44,26 @@ def loadlangs(file_path='./cfg/compilables.json'):
         return []
 
 def setenvvars(config):
-    os.environ['OUTPUT_NAME'] = config.get('output_name', "model-01")
-    os.environ['CRWL'] = str(config.get('crawl', False)).lower()
-    os.environ['GIT_PATH'] = config.get('gitpath', '')
-    os.environ['COMPILE'] = str(config.get('compile', False)).lower()
-    os.environ['TRAIN'] = str(config.get('train', False)).lower()
-    os.environ['OUTDIR'] = config.get('outdir', '')
-    os.environ['SUM'] = str(config.get('sum', False)).lower()
-    os.environ['DOWN'] = str(config.get('download', False)).lower()
+    os.environ['TRAINER_TRAINER_OUTPUT_NAME'] = config.get('output_name', "model-01")
+    os.environ['TRAINER_CRWL'] = str(config.get('crawl', False)).lower()
+    os.environ['TRAINER_GIT_PATH'] = config.get('gitpath', '')
+    os.environ['TRAINER_COMPILE'] = str(config.get('compile', False)).lower()
+    os.environ['TRAINER_TRAIN'] = str(config.get('train', False)).lower()
+    os.environ['TRAINER_OUTDIR'] = config.get('outdir', '')
+    os.environ['TRAINER_SUM'] = str(config.get('sum', False)).lower()
+    os.environ['TRAINER_DOWN'] = str(config.get('download', False)).lower()
 
 def printcfg():
-    print("Configuration chargée avec succès.")
-    print(f"OUTPUT_NAME: {os.environ['OUTPUT_NAME']}")
-    print(f"CRWL: {os.environ['CRWL']}")
-    print(f"GIT_PATH: {os.environ['GIT_PATH']}")
-    print(f"COMPILE: {os.environ['COMPILE']}")
-    print(f"TRAIN: {os.environ['TRAIN']}")
-    print(f"OUTDIR: {os.environ['OUTDIR']}")
-    print(f"SUM: {os.environ['SUM']}")
-    print(f"DOWNLOAD: {os.environ['DOWN']}")
+    if os.environ.get('TRAINER_DBG') == 'True':
+        print("Configuration chargée avec succès.")
+        print(f"OUTPUT_NAME: {os.environ.get('TRAINER_OUTPUT_NAME')}")
+        print(f"TRAINER_CRWL: {os.environ.get('TRAINER_CRWL')}")
+        print(f"TRAINER_GIT_PATH: {os.environ.get('TRAINER_GIT_PATH')}")
+        print(f"TRAINER_COMPILE: {os.environ.get('TRAINER_COMPILE')}")
+        print(f"TRAINER_TRAIN: {os.environ.get('TRAINER_TRAIN')}")
+        print(f"TRAINER_OUTDIR: {os.environ.get('TRAINER_OUTDIR')}")
+        print(f"TRAINER_SUM: {os.environ.get('TRAINER_SUM')}")
+        print(f"TRAINER_DOWNLOAD: {os.environ.get('TRAINER_DOWN')}")
 
 def main():
     print("Démarrage de ai-trainer version 1.0.")
@@ -82,6 +83,7 @@ def init():
 if __name__ == "__main__":
     init()
     parser = argparse.ArgumentParser(description="AI Trainer Configuration")
+    parser.add_argument('--debug', '-d', action='store_true', help='Run in debug mode.')
     subparsers = parser.add_subparsers(dest='command')
     config_parser = subparsers.add_parser('config', help='Modifier la configuration')
     config_parser.add_argument('--output_name', type=str, help='Nom du modèle')
@@ -98,22 +100,25 @@ if __name__ == "__main__":
     crawl_parser.add_argument('--keywords', '-k', type=str, help='Mots-clés de recherche (chemin de fichiers de mots-clés)')
     args = parser.parse_args()
 
+    if args.debug:
+        os.environ['TRAINER-DBG'] = True
+
     if args.command == 'config':
         main()
         if args.output_name:
-            os.environ['OUTPUT_NAME'] = args.output_name
+            os.environ['TRAINER_OUTPUT_NAME'] = args.output_name
         if args.crawl is not None:
-            os.environ['CRWL'] = str(args.crawl).lower()
+            os.environ['TRAINER_CRWL'] = str(args.crawl).lower()
         if args.git_path:
-            os.environ['GIT_PATH'] = args.git_path
+            os.environ['TRAINER_GIT_PATH'] = args.git_path
         if args.compile is not None:
-            os.environ['COMPILE'] = str(args.compile).lower()
+            os.environ['TRAINER_COMPILE'] = str(args.compile).lower()
         if args.train is not None:
-            os.environ['TRAIN'] = str(args.train).lower()
+            os.environ['TRAINER_TRAIN'] = str(args.train).lower()
         if args.outdir:
-            os.environ['OUTDIR'] = args.outdir
+            os.environ['TRAINER_OUTDIR'] = args.outdir
         if args.sum is not None:
-            os.environ['SUM'] = str(args.sum).lower()
+            os.environ['TRAINER_SUM'] = str(args.sum).lower()
     licensesdt = parselic()
     compilable_languages = loadlangs()
     if args.command == 'crawl':
@@ -128,9 +133,9 @@ if __name__ == "__main__":
             if sol is None:
                 os.exit(0)
             printjson(sol)
-        if args.keywords or args.k:
-            keywords = readkeywords(args.keywords or args.k)
-            print(keywords)
         else:
-            print(f"Crawling main. File: {keywords} ")
+            if args.keywords or args.k:
+                keywords = readkeywords(args.keywords or args.k)
+                print(keywords)                
+            print(f"Crawling main. File: {keywords} API calls to: https://api.github.com/search/repositories ")
             #crawl_main()
