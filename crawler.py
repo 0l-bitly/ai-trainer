@@ -30,10 +30,10 @@ def clear(data):
     ]
     filtered = []
     for item in data:
-        if (not item.get("private") and 
-            not item.get("archived") and 
-            not item.get("disabled") and 
-            item.get("license") is not None and 
+        if (not item.get("private") and
+            not item.get("archived") and
+            not item.get("disabled") and
+            item.get("license") is not None and
             item.get("language") is not None):
             filtered_item = {key: item[key] for key in fields if key in item}
             filtered.append(filtered_item)
@@ -44,10 +44,7 @@ def download(json):
     print(json)
     #execmd([])
 
-def main(languages, keyword, allowed_licenses, token=None):
-    if os.getenv("TRAINER_CRWL") == False:
-        print("Crawl disabled. If you want to enable it, try python3 main.py config --crawl true")
-        return None
+def fetchrepos(languages, keyword, token=None):
     repositories_data = []
     url = "https://api.github.com/search/repositories"
     headers = {}
@@ -66,6 +63,13 @@ def main(languages, keyword, allowed_licenses, token=None):
         except requests.exceptions.RequestException as e:
             print(f"Error searching repositories for {language}: {e}")
         time.sleep(1)
+    return repositories_data
+
+def main(languages, keyword, allowed_licenses, token=None):
+    if os.getenv("TRAINER_CRWL") == False:
+        print("Crawl disabled. If you want to enable it, try python3 main.py config --crawl true")
+        return None
+    repositories_data = fetchrepos(languages, keyword, token)
     repositories_data = clear(repositories_data)
     filtered_repositories = checklic(repositories_data, allowed_licenses)
     if os.getenv('TRAINER_DOWN') == 'false':

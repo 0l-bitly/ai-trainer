@@ -1,0 +1,5 @@
+{
+    "compilables": [
+        {"langage": "Python", "extension": ".py"}
+    ]
+}

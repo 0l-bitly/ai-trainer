@@ -30,7 +30,7 @@ It is now in development and does not working.
 ```
 ### Project overview
 It crawls github and look at for free repos. (You are limited by your rate limit)
-config.json file (read by main.py):
+config.json file structure (read by main.py):
 ```json
 {
     "compile": true,
@@ -43,27 +43,28 @@ config.json file (read by main.py):
     "auth": ["API_KEY", "OTHER_API_KEY"]
 }
 ```
-licenses.json file :
+licenses.json file structure: 
 ```json
 {
     "licenses" : {
-        "authorised_license_name": true, // If the license is authorised, "true", else "false"
+        "authorised_license_name": true,
         "forbidden_license_name": false
     }
 
 }
 ```
-compilers.json file :
+compilers.json file structure :
 ```json
 {
-    "compilers" : {
-        "langage_name" : ["compiler_name", "regex_for_the_command"]
-    },
+    "compilables": [
+        {"langage": "Python", "extension": ".py"}
+    ]
     "compilerspath" : "./comp/"
 }
 ```
 
 ### Installing
+No build required.
 ```bash
 git clone https://www.github.com/0l-bitly/ai-trainer
 ```
@@ -71,5 +72,13 @@ git clone https://www.github.com/0l-bitly/ai-trainer
 cd ai-trainer/
 ```
 ```bash
-python3 main.py
+python3 main.py [options]
+```
+For help:
+```bash
+python3 main.py --help
+```
+Example usage:
+```bash
+python3 main.py crawl --token "ghp_TOKEN_GITHUB" --keywords "main-testing-keywords.txt"
 ```

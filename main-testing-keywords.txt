@@ -1,0 +1,4 @@
+ai
+network
+software
+gestion

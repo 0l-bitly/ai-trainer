@@ -7,67 +7,16 @@ from crawler import main as crawl_main
 from funcs import genrandstr
 from funcs import printjson
 from funcs import readkeywords
+from funcs import parselic
+from funcs import loading
+from funcs import setenvvars
+from funcs import printcfg
+from funcs import parsecompilation
+from funcs import getlangs
 
-def parselic(file_path='./cfg/licenses.json'):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    free_licenses = []
-    non_free_licenses = []
-    for license_name, is_free in data['licenses'].items():
-        if is_free:
-            free_licenses.append(license_name)
-        else:
-            non_free_licenses.append(license_name)
-    return free_licenses, non_free_licenses
-
-def loading(config_path='./cfg/config.json'):
-    try:
-        with open(config_path, 'r') as config_file:
-            return json.load(config_file)
-    except FileNotFoundError:
-        print(f"Le fichier de configuration {config_path} est introuvable.")
-        exit(1)
-    except json.JSONDecodeError:
-        print("Erreur lors de la lecture du fichier de configuration.")
-        exit(1)
-
-def loadlangs(file_path='./cfg/compilables.json'):
-    try:
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-        return [(lang['language'], lang['extension']) for lang in data['compilables']]
-    except FileNotFoundError:
-        print(f"Le fichier {file_path} est introuvable.")
-        return []
-    except json.JSONDecodeError:
-        print("Erreur lors de la lecture du fichier de langages compilables.")
-        return []
-
-def setenvvars(config):
-    os.environ['TRAINER_TRAINER_OUTPUT_NAME'] = config.get('output_name', "model-01")
-    os.environ['TRAINER_CRWL'] = str(config.get('crawl', False)).lower()
-    os.environ['TRAINER_GIT_PATH'] = config.get('gitpath', '')
-    os.environ['TRAINER_COMPILE'] = str(config.get('compile', False)).lower()
-    os.environ['TRAINER_TRAIN'] = str(config.get('train', False)).lower()
-    os.environ['TRAINER_OUTDIR'] = config.get('outdir', '')
-    os.environ['TRAINER_SUM'] = str(config.get('sum', False)).lower()
-    os.environ['TRAINER_DOWN'] = str(config.get('download', False)).lower()
-
-def printcfg():
-    if os.environ.get('TRAINER_DBG') == 'True':
-        print("Configuration chargée avec succès.")
-        print(f"OUTPUT_NAME: {os.environ.get('TRAINER_OUTPUT_NAME')}")
-        print(f"TRAINER_CRWL: {os.environ.get('TRAINER_CRWL')}")
-        print(f"TRAINER_GIT_PATH: {os.environ.get('TRAINER_GIT_PATH')}")
-        print(f"TRAINER_COMPILE: {os.environ.get('TRAINER_COMPILE')}")
-        print(f"TRAINER_TRAIN: {os.environ.get('TRAINER_TRAIN')}")
-        print(f"TRAINER_OUTDIR: {os.environ.get('TRAINER_OUTDIR')}")
-        print(f"TRAINER_SUM: {os.environ.get('TRAINER_SUM')}")
-        print(f"TRAINER_DOWNLOAD: {os.environ.get('TRAINER_DOWN')}")
-
-def main():
+def main(configjsonpath='./cfg/config.json'):
     print("Démarrage de ai-trainer version 1.0.")
-    config = loading()
+    config = loading(configjsonpath)
     setenvvars(config)
     printcfg()
 
@@ -84,6 +33,8 @@ if __name__ == "__main__":
     init()
     parser = argparse.ArgumentParser(description="AI Trainer Configuration")
     parser.add_argument('--debug', '-d', action='store_true', help='Run in debug mode.')
+    parser.add_argument('--config_file', '-cfg', type=str, help='Custom config file path.')
+    parser.add_argument('--compilation_config_file', type=str, help='Custom compilation config file path.')
     subparsers = parser.add_subparsers(dest='command')
     config_parser = subparsers.add_parser('config', help='Modifier la configuration')
     config_parser.add_argument('--output_name', type=str, help='Nom du modèle')
@@ -101,10 +52,21 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.debug:
-        os.environ['TRAINER-DBG'] = True
+        os.environ['TRAINER-DBG'] = 'true'
+
+    if args.compilation_config_file:
+        compilationinfo = parsecompilation(args.compilation_config_file)
+    else:
+        compilationinfo = parsecompilation()
+
+    if args.config_file:
+        main(args.config_file)
+    else:
+        main()
+
+    licensesdt = parselic()
 
     if args.command == 'config':
-        main()
         if args.output_name:
             os.environ['TRAINER_OUTPUT_NAME'] = args.output_name
         if args.crawl is not None:
@@ -119,10 +81,8 @@ if __name__ == "__main__":
             os.environ['TRAINER_OUTDIR'] = args.outdir
         if args.sum is not None:
             os.environ['TRAINER_SUM'] = str(args.sum).lower()
-    licensesdt = parselic()
-    compilable_languages = loadlangs()
+
     if args.command == 'crawl':
-        main()
         print("Starting crawl.")
         if args.test:
             print("Mode: Test")
@@ -134,8 +94,23 @@ if __name__ == "__main__":
                 os.exit(0)
             printjson(sol)
         else:
-            if args.keywords or args.k:
-                keywords = readkeywords(args.keywords or args.k)
-                print(keywords)                
-            print(f"Crawling main. File: {keywords} API calls to: https://api.github.com/search/repositories ")
-            #crawl_main()
+            try:
+                print("Loading authorized programming langages.")
+                langages = getlangs(compilationinfo, "langage")
+            except Exception as e:
+                print("ERROR: ", e)
+            if args.keywords:
+                keywordsfile = args.keywords
+                keywords = readkeywords(keywordsfile)
+                print(keywords)
+            else:
+                keywordsfile = "./keywords.txt"
+                print("Keywords not specified. Using default.")
+                keywords = readkeywords()
+                print(keywords)
+            print(f"Crawling main. Keywords file: {keywordsfile} API calls to: https://api.github.com/search/repositories Langages file: ./cfg/compilation.json")
+            for keyword in keywords:
+                if args.token:
+                    crawl_main(langages, keyword, licensesdt, args.token)
+                else:
+                    crawl_main(langages, keyword, licensesdt)

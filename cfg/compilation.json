@@ -1,0 +1,21 @@
+{
+    "compilables": [
+        {"langage": "C", "extension": ".c"},
+        {"langage": "C++", "extension": ".cpp"},
+        {"langage": "Rust", "extension": ".rs"},
+        {"langage": "Go", "extension": ".go"},
+        {"langage": "D", "extension": ".d"},
+        {"langage": "Swift", "extension": ".swift"},
+        {"langage": "Ada", "extension": ".adb"},
+        {"langage": "Fortran", "extension": ".f90"},
+        {"langage": "Pascal", "extension": ".pas"},
+        {"langage": "Nim", "extension": ".nim"},
+        {"langage": "Haskell", "extension": ".hs"},
+        {"langage": "OCaml", "extension": ".ml"},
+        {"langage": "F#", "extension": ".fs"},
+        {"langage": "Assembly", "extension": ".asm"},
+        {"langage": "Crystal", "extension": ".cr"},
+        {"langage": "Python", "extension": ".py"}
+    ],
+    "compilerspath" : "./comp/"
+}
