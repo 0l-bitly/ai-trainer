@@ -4,6 +4,7 @@
     "sum" : false,
     "crawl": true,
     "down": true,
+    "output_name": "model-01",
     "compilerscfgfile": "./cfg/compilers.json",
     "licensescfgfile": "./cfg/licenses.json",
     "gitpath": "/usr/bin/git",

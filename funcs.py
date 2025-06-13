@@ -66,7 +66,7 @@ def loading(config_path):
         exit(1)
 
 def setenvvars(config):
-    os.environ['TRAINER_TRAINER_OUTPUT_NAME'] = config.get('output_name', "model-01")
+    os.environ['TRAINER_OUTPUT_NAME'] = config.get('output_name', "model-01")
     os.environ['TRAINER_CRWL'] = str(config.get('crawl', False)).lower()
     os.environ['TRAINER_GIT_PATH'] = config.get('gitpath', '')
     os.environ['TRAINER_COMPILE'] = str(config.get('compile', False)).lower()
@@ -76,7 +76,7 @@ def setenvvars(config):
     os.environ['TRAINER_DOWN'] = str(config.get('download', False)).lower()
 
 def printcfg():
-    if os.environ.get('TRAINER_DBG') == 'True':
+    if os.environ.get('TRAINER_DBG') == 'true':
         print("Configuration chargée avec succès.")
         print(f"OUTPUT_NAME: {os.environ.get('TRAINER_OUTPUT_NAME')}")
         print(f"TRAINER_CRWL: {os.environ.get('TRAINER_CRWL')}")

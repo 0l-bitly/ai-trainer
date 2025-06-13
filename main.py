@@ -52,7 +52,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.debug:
-        os.environ['TRAINER-DBG'] = 'true'
+        os.environ['TRAINER_DBG'] = 'true'
 
     if args.compilation_config_file:
         compilationinfo = parsecompilation(args.compilation_config_file)
@@ -94,6 +94,7 @@ if __name__ == "__main__":
                 os.exit(0)
             printjson(sol)
         else:
+            print("Mode: Main")
             try:
                 print("Loading authorized programming langages.")
                 langages = getlangs(compilationinfo, "langage")
