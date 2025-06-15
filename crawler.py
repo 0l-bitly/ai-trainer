@@ -3,6 +3,12 @@ import requests
 import time
 import os
 import subprocess
+from datetime import datetime
+
+def date():
+    now = datetime.now()
+    now = now.strftime("%Y:%m:%d:%H:%M")
+    return now
 
 def checklic(data, allowed_licenses):
     if isinstance(allowed_licenses[0], list):
@@ -15,6 +21,10 @@ def checklic(data, allowed_licenses):
             if cleaned_license_name in cleaned_allowed_licenses:
                 filtered_repositories.append(item)
     return filtered_repositories
+
+def addline(keyword, lang, number):
+    with open('crawlog.list', 'a') as log:
+        log.write(f"getrepos://keyword:{keyword} lang:{lang} nbr: {number} \n")
 
 def clear(data):
     fields = [
@@ -63,23 +73,45 @@ def fetchrepos(langage, keyword, token=None):
         response.raise_for_status()
         print(f"[-] Received response for language {langage}: {response.status_code}")
         if response.status_code == 403:
-            input("Rate limit exceeded. Waiting before making more requests. Press enter to restart.")
+            input("[Err] Rate limit exceeded. Waiting before making more requests. Press enter to restart.")
         repositories_data.extend(response.json().get('items', []))
     except requests.exceptions.RequestException as e:
         print(f"[Err] Error searching repositories for {langage}: {e}")
     time.sleep(1)
     return repositories_data
 
-def main(languages, keyword, allowed_licenses, token=None):
-    if os.getenv("TRAINER_CRWL") == False:
+def main(languages, keywords, allowed_licenses, token=None):
+
+    if os.getenv("TRAINER_CRWL") == "False":
         print("[Warn] Crawl disabled. If you want to enable it, try python3 main.py config --crawl true")
         return None
-    
-    for langage in languages:
-        repositories_data = fetchrepos(langage, keyword, token)
-        repositories_data = clear(repositories_data)
-        filtered_repositories = checklic(repositories_data, allowed_licenses)
-        print(filtered_repositories)
+
+    output, return_code = execmd(['ls', 'crawlog.list'])
+    if return_code == 2:
+        print("[Warn] crawlog.list does not exists. Create file.")
+        execmd(['touch', 'crawlog.list'])
+        with open('crawlog.list', 'a') as log:
+            log.writelines(['Crawl log file.\n', f'Create date: {date()}\n', '----------------------------------- \n'])
+    else:
+        with open('crawlog.list', 'a') as log:
+            log.writelines(['\n', '\n', f'Crawl session at {date()}\n', '----------------------------------- \n'])
+
+    output=None
+    return_code=None
+
+    index = 1
+
+    for keyword in keywords:
+        for langage in languages:
+            repositories_data = fetchrepos(langage, keyword, token)
+            repositories_data = clear(repositories_data)
+            filtered_repositories = checklic(repositories_data, allowed_licenses)
+            print(filtered_repositories)
+            addline(keyword, langage, index)
+            index = index + 1
+
+    print("Crawled successfuly !")
+
     if os.getenv('TRAINER_DOWN') == 'false':
         return filtered_repositories
     else:
@@ -94,7 +126,8 @@ def execmd(command):
             text=True,
             check=True
         )
+        return result.stdout, 0
     except subprocess.CalledProcessError as e:
         print("Error :", e.stderr)
-        return result.stderr
-    return result.stdout
+        return e.stderr, e.returncode
+        

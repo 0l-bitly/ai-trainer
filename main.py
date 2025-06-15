@@ -110,8 +110,7 @@ if __name__ == "__main__":
                 keywords = readkeywords()
                 print(keywords)
             print(f"Crawling main. Keywords file: {keywordsfile} API calls to: https://api.github.com/search/repositories Langages file: ./cfg/compilation.json")
-            for keyword in keywords:
-                if args.token:
-                    crawl_main(langages, keyword, licensesdt, args.token)
-                else:
-                    crawl_main(langages, keyword, licensesdt)
+            if args.token:
+                crawl_main(langages, keywords, licensesdt, args.token)
+            else:
+                crawl_main(langages, keywords, licensesdt)
