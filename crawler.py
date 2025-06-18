@@ -26,6 +26,34 @@ def addline(keyword, lang, number):
     with open('crawlog.list', 'a') as log:
         log.write(f"getrepos://keyword:{keyword} lang:{lang} nbr: {number} \n")
 
+def parseres(json_data):
+    if isinstance(json_data, str):
+        json_data = json.loads(json_data)
+    
+    results = []
+    
+    for item in json_data:
+        repo_info = {
+            'id': item.get('id'),
+            'name': item.get('name'),
+            'private': item.get('private'),
+            'license': {
+                'key': item['license'].get('key'),
+                'name': item['license'].get('name'),
+                'spdx_id': item['license'].get('spdx_id'),
+                'url': item['license'].get('url'),
+                'node_id': item['license'].get('node_id')
+            },
+            'archived': item.get('archived'),
+            'disabled': item.get('disabled'),
+            'language': item.get('language'),
+            'clone_url': item.get('clone_url'),
+            'default_branch': item.get('default_branch')
+        }
+        results.append(repo_info)
+    
+    return results
+
 def clear(data):
     fields = [
         "id",
@@ -49,11 +77,28 @@ def clear(data):
             filtered.append(filtered_item)
     return filtered
 
-def download(json):
+def logdownload(idnbr, index, lang, url, success=True):
+    with open('crawlog.list', 'a') as log:
+        status = "SUCCESS" if success else "FAILURE"
+        log.write(f"----> Download {status}: id: {idnbr} index:{index} lang:{lang} url:{url}\n")
+
+def download(repositories):
     print("Downloading repositories.")
-    print(json)
-    print("Feature not implemented.")
-    #execmd([])
+    outdirbase = os.getenv("TRAINER_OUTDIR")
+    for index, repo in enumerate(repositories, start=1):
+        clone_url = repo['clone_url']
+        idnbr = repo['id']
+        name = repo['name']
+        outdir = f"{outdirbase}{name}"
+        print(f"Cloning {repo['name']} from {clone_url}...")
+        try:
+            subprocess.run(['git', 'clone', clone_url, outdir], check=True)
+            print(f"Successfully cloned {repo['name']}.")
+            logdownload(idnbr, index, repo['language'], clone_url, success=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Failed to clone {repo['name']}: {e}")
+            logdownload(idnbr, index, repo['language'], clone_url, success=False)
+    print("All repositories processed.")
 
 def fetchrepos(langage, keyword, token=None):
     repositories_data = []
@@ -106,16 +151,15 @@ def main(languages, keywords, allowed_licenses, token=None):
             repositories_data = fetchrepos(langage, keyword, token)
             repositories_data = clear(repositories_data)
             filtered_repositories = checklic(repositories_data, allowed_licenses)
-            print(filtered_repositories)
+            repos = parseres(filtered_repositories)
             addline(keyword, langage, index)
+            if os.getenv('TRAINER_DOWNLOAD') == 'false':
+                return filtered_repositories
+            else:
+                download(repos)
             index = index + 1
 
     print("Crawled successfuly !")
-
-    if os.getenv('TRAINER_DOWN') == 'false':
-        return filtered_repositories
-    else:
-        download(filtered_repositories)
 
 def execmd(command):
     try:
@@ -130,4 +174,3 @@ def execmd(command):
     except subprocess.CalledProcessError as e:
         print("Error :", e.stderr)
         return e.stderr, e.returncode
-        
