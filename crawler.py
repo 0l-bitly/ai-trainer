@@ -82,7 +82,7 @@ def logdownload(idnbr, index, lang, url, success=True):
         status = "SUCCESS" if success else "FAILURE"
         log.write(f"----> Download {status}: id: {idnbr} index:{index} lang:{lang} url:{url}\n")
 
-def download(repositories):
+def download(repositories, clonedrepos, failures):
     print("Downloading repositories.")
     outdirbase = os.getenv("TRAINER_OUTDIR")
     for index, repo in enumerate(repositories, start=1):
@@ -95,10 +95,13 @@ def download(repositories):
             subprocess.run(['git', 'clone', clone_url, outdir], check=True)
             print(f"Successfully cloned {repo['name']}.")
             logdownload(idnbr, index, repo['language'], clone_url, success=True)
+            clonedrepos = clonedrepos + 1
         except subprocess.CalledProcessError as e:
             print(f"Failed to clone {repo['name']}: {e}")
             logdownload(idnbr, index, repo['language'], clone_url, success=False)
+            failures = failures + 1
     print("All repositories processed.")
+    return clonedrepos, failures
 
 def fetchrepos(langage, keyword, token=None):
     repositories_data = []
@@ -145,6 +148,8 @@ def main(languages, keywords, allowed_licenses, token=None):
     return_code=None
 
     index = 1
+    clonedrepos = 0
+    failures = 0
 
     for keyword in keywords:
         for langage in languages:
@@ -156,10 +161,17 @@ def main(languages, keywords, allowed_licenses, token=None):
             if os.getenv('TRAINER_DOWNLOAD') == 'false':
                 return filtered_repositories
             else:
-                download(repos)
-            index = index + 1
+                cloned, failed = download(repos, clonedrepos, failures)
+                clonedrepos += cloned
+                failures += failed
+            index += 1
 
-    print("Crawled successfuly !")
+    print("Crawled successfully !")
+    print("Stats:")
+    print(f"{clonedrepos} repositories cloned.")
+    print(f"{index} calls to the Github API.")
+    print(f"{len(languages)} languages covered.")
+    print(f"{len(keywords)} keywords searched.")
 
 def execmd(command):
     try:

@@ -66,3 +66,187 @@ getrepos://keyword:ai lang:Python nbr: 1
 ----> Download SUCCESS: id: 894807433 index:3 lang:Python url:https://github.com/brandondocusen/CntxtPY.git
 ----> Download SUCCESS: id: 673241446 index:4 lang:Python url:https://github.com/Boburmirzo/chatgpt-api-python-sales.git
 ----> Download SUCCESS: id: 172238351 index:5 lang:Python url:https://github.com/keshavsingh4522/Python.git
+
+
+Crawl session at 2025:06:18:17:32
+----------------------------------- 
+getrepos://keyword:ai lang:Python nbr: 1 
+----> Download SUCCESS: id: 665164787 index:1 lang:Jupyter Notebook url:https://github.com/benman1/generative_ai_with_langchain.git
+----> Download SUCCESS: id: 275947506 index:2 lang:Jupyter Notebook url:https://github.com/FreeBirdsCrew/AI_ChatBot_Python.git
+----> Download SUCCESS: id: 894807433 index:3 lang:Python url:https://github.com/brandondocusen/CntxtPY.git
+----> Download SUCCESS: id: 673241446 index:4 lang:Python url:https://github.com/Boburmirzo/chatgpt-api-python-sales.git
+----> Download SUCCESS: id: 172238351 index:5 lang:Python url:https://github.com/keshavsingh4522/Python.git
+----> Download SUCCESS: id: 899383871 index:6 lang:Python url:https://github.com/gradion-ai/freeact.git
+----> Download SUCCESS: id: 755911780 index:7 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 302562347 index:8 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 947913624 index:9 lang:Python url:https://github.com/shibing624/deep-research.git
+----> Download SUCCESS: id: 687066886 index:10 lang:Jupyter Notebook url:https://github.com/FiammettaC/AI-for-Chemical-Engineers.git
+----> Download SUCCESS: id: 435640635 index:11 lang:Python url:https://github.com/oneai-nlp/oneai-python.git
+----> Download SUCCESS: id: 975508361 index:12 lang:Python url:https://github.com/georgekhananaev/excel-ai-assistant.git
+----> Download SUCCESS: id: 813659973 index:13 lang:Python url:https://github.com/badrex/emojeez.git
+getrepos://keyword:network lang:Python nbr: 2
+----> Download SUCCESS: id: 1696822 index:1 lang:Python url:https://github.com/clips/pattern.git
+----> Download SUCCESS: id: 46979489 index:2 lang:Python url:https://github.com/sherjilozair/char-rnn-tensorflow.git
+----> Download SUCCESS: id: 57287024 index:3 lang:Python url:https://github.com/hunkim/word-rnn-tensorflow.git
+----> Download SUCCESS: id: 274472671 index:4 lang:Shell url:https://github.com/zszszszsz/.config.git
+----> Download SUCCESS: id: 634128785 index:5 lang:Jupyter Notebook url:https://github.com/AayushSameerShah/Neural-Net-Zero-to-Hero-with-Andrej.git
+----> Download SUCCESS: id: 772510661 index:6 lang:Python url:https://github.com/Dartvauder/NeuroSandboxWebUI.git
+----> Download SUCCESS: id: 334348676 index:7 lang:Jupyter Notebook url:https://github.com/yonycherkos/Applied-Data-Science-with-Python-Specialization.git
+----> Download SUCCESS: id: 166771428 index:8 lang:Python url:https://github.com/PacktPublishing/Python-Network-Programming.git
+----> Download SUCCESS: id: 302562347 index:9 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 107759560 index:10 lang:Jupyter Notebook url:https://github.com/navjindervirdee/neural-networks.git
+----> Download SUCCESS: id: 316785160 index:11 lang:Python url:https://github.com/hrichharms/AlbiPy.git
+----> Download SUCCESS: id: 22460493 index:12 lang:Python url:https://github.com/sajjanbh/WLAN-Monitoring.git
+getrepos://keyword:software lang:Python nbr: 3 
+----> Download SUCCESS: id: 630624519 index:1 lang:Python url:https://github.com/alantech/marsha.git
+----> Download SUCCESS: id: 330964963 index:2 lang:C++ url:https://github.com/Algo-Phantoms/Algo-Tree.git
+----> Download SUCCESS: id: 293884133 index:3 lang:Python url:https://github.com/JoeyHendricks/python-benchmark-harness.git
+----> Download SUCCESS: id: 130693503 index:4 lang:Python url:https://github.com/eellak/gsoc2018-spacy.git
+----> Download SUCCESS: id: 755911780 index:5 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 17301729 index:6 lang:Python url:https://github.com/openeventdata/petrarch.git
+----> Download SUCCESS: id: 345204360 index:7 lang:Python url:https://github.com/farlleyferreira/ms-fastapi-template.git
+----> Download SUCCESS: id: 87590323 index:8 lang:Jupyter Notebook url:https://github.com/elswork/rpi-tensorflow.git
+----> Download SUCCESS: id: 117672261 index:9 lang:Python url:https://github.com/ginking/archimedes-1.git
+----> Download SUCCESS: id: 2302872 index:10 lang:Python url:https://github.com/cidles/poio-analyzer.git
+getrepos://keyword:gestion lang:Python nbr: 4 
+
+
+Crawl session at 2025:06:18:17:36
+----------------------------------- 
+getrepos://keyword:ai lang:Python nbr: 1 
+----> Download SUCCESS: id: 665164787 index:1 lang:Jupyter Notebook url:https://github.com/benman1/generative_ai_with_langchain.git
+----> Download SUCCESS: id: 275947506 index:2 lang:Jupyter Notebook url:https://github.com/FreeBirdsCrew/AI_ChatBot_Python.git
+----> Download SUCCESS: id: 894807433 index:3 lang:Python url:https://github.com/brandondocusen/CntxtPY.git
+----> Download SUCCESS: id: 673241446 index:4 lang:Python url:https://github.com/Boburmirzo/chatgpt-api-python-sales.git
+----> Download SUCCESS: id: 172238351 index:5 lang:Python url:https://github.com/keshavsingh4522/Python.git
+----> Download SUCCESS: id: 899383871 index:6 lang:Python url:https://github.com/gradion-ai/freeact.git
+----> Download SUCCESS: id: 755911780 index:7 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 302562347 index:8 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 947913624 index:9 lang:Python url:https://github.com/shibing624/deep-research.git
+----> Download SUCCESS: id: 687066886 index:10 lang:Jupyter Notebook url:https://github.com/FiammettaC/AI-for-Chemical-Engineers.git
+----> Download SUCCESS: id: 435640635 index:11 lang:Python url:https://github.com/oneai-nlp/oneai-python.git
+----> Download SUCCESS: id: 975508361 index:12 lang:Python url:https://github.com/georgekhananaev/excel-ai-assistant.git
+----> Download SUCCESS: id: 813659973 index:13 lang:Python url:https://github.com/badrex/emojeez.git
+getrepos://keyword:network lang:Python nbr: 2 
+----> Download SUCCESS: id: 1696822 index:1 lang:Python url:https://github.com/clips/pattern.git
+----> Download SUCCESS: id: 46979489 index:2 lang:Python url:https://github.com/sherjilozair/char-rnn-tensorflow.git
+----> Download SUCCESS: id: 57287024 index:3 lang:Python url:https://github.com/hunkim/word-rnn-tensorflow.git
+----> Download SUCCESS: id: 274472671 index:4 lang:Shell url:https://github.com/zszszszsz/.config.git
+----> Download SUCCESS: id: 634128785 index:5 lang:Jupyter Notebook url:https://github.com/AayushSameerShah/Neural-Net-Zero-to-Hero-with-Andrej.git
+----> Download SUCCESS: id: 772510661 index:6 lang:Python url:https://github.com/Dartvauder/NeuroSandboxWebUI.git
+----> Download SUCCESS: id: 334348676 index:7 lang:Jupyter Notebook url:https://github.com/yonycherkos/Applied-Data-Science-with-Python-Specialization.git
+----> Download SUCCESS: id: 166771428 index:8 lang:Python url:https://github.com/PacktPublishing/Python-Network-Programming.git
+----> Download SUCCESS: id: 302562347 index:9 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 107759560 index:10 lang:Jupyter Notebook url:https://github.com/navjindervirdee/neural-networks.git
+----> Download SUCCESS: id: 316785160 index:11 lang:Python url:https://github.com/hrichharms/AlbiPy.git
+----> Download SUCCESS: id: 22460493 index:12 lang:Python url:https://github.com/sajjanbh/WLAN-Monitoring.git
+getrepos://keyword:software lang:Python nbr: 3 
+----> Download SUCCESS: id: 630624519 index:1 lang:Python url:https://github.com/alantech/marsha.git
+----> Download SUCCESS: id: 330964963 index:2 lang:C++ url:https://github.com/Algo-Phantoms/Algo-Tree.git
+----> Download SUCCESS: id: 293884133 index:3 lang:Python url:https://github.com/JoeyHendricks/python-benchmark-harness.git
+----> Download SUCCESS: id: 130693503 index:4 lang:Python url:https://github.com/eellak/gsoc2018-spacy.git
+----> Download SUCCESS: id: 755911780 index:5 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 17301729 index:6 lang:Python url:https://github.com/openeventdata/petrarch.git
+----> Download SUCCESS: id: 345204360 index:7 lang:Python url:https://github.com/farlleyferreira/ms-fastapi-template.git
+----> Download SUCCESS: id: 87590323 index:8 lang:Jupyter Notebook url:https://github.com/elswork/rpi-tensorflow.git
+----> Download SUCCESS: id: 117672261 index:9 lang:Python url:https://github.com/ginking/archimedes-1.git
+----> Download SUCCESS: id: 2302872 index:10 lang:Python url:https://github.com/cidles/poio-analyzer.git
+getrepos://keyword:gestion lang:Python nbr: 4 
+
+
+Crawl session at 2025:06:18:17:40
+----------------------------------- 
+getrepos://keyword:ai lang:Python nbr: 1 
+
+
+Crawl session at 2025:06:18:17:40
+----------------------------------- 
+getrepos://keyword:ai lang:Python nbr: 1 
+----> Download SUCCESS: id: 665164787 index:1 lang:Jupyter Notebook url:https://github.com/benman1/generative_ai_with_langchain.git
+----> Download SUCCESS: id: 275947506 index:2 lang:Jupyter Notebook url:https://github.com/FreeBirdsCrew/AI_ChatBot_Python.git
+----> Download SUCCESS: id: 894807433 index:3 lang:Python url:https://github.com/brandondocusen/CntxtPY.git
+----> Download SUCCESS: id: 673241446 index:4 lang:Python url:https://github.com/Boburmirzo/chatgpt-api-python-sales.git
+----> Download SUCCESS: id: 172238351 index:5 lang:Python url:https://github.com/keshavsingh4522/Python.git
+----> Download SUCCESS: id: 899383871 index:6 lang:Python url:https://github.com/gradion-ai/freeact.git
+----> Download SUCCESS: id: 755911780 index:7 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 302562347 index:8 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 947913624 index:9 lang:Python url:https://github.com/shibing624/deep-research.git
+----> Download SUCCESS: id: 687066886 index:10 lang:Jupyter Notebook url:https://github.com/FiammettaC/AI-for-Chemical-Engineers.git
+----> Download SUCCESS: id: 435640635 index:11 lang:Python url:https://github.com/oneai-nlp/oneai-python.git
+----> Download SUCCESS: id: 975508361 index:12 lang:Python url:https://github.com/georgekhananaev/excel-ai-assistant.git
+----> Download SUCCESS: id: 813659973 index:13 lang:Python url:https://github.com/badrex/emojeez.git
+getrepos://keyword:network lang:Python nbr: 2 
+----> Download SUCCESS: id: 1696822 index:1 lang:Python url:https://github.com/clips/pattern.git
+----> Download SUCCESS: id: 46979489 index:2 lang:Python url:https://github.com/sherjilozair/char-rnn-tensorflow.git
+----> Download SUCCESS: id: 57287024 index:3 lang:Python url:https://github.com/hunkim/word-rnn-tensorflow.git
+----> Download SUCCESS: id: 274472671 index:4 lang:Shell url:https://github.com/zszszszsz/.config.git
+----> Download SUCCESS: id: 634128785 index:5 lang:Jupyter Notebook url:https://github.com/AayushSameerShah/Neural-Net-Zero-to-Hero-with-Andrej.git
+----> Download SUCCESS: id: 772510661 index:6 lang:Python url:https://github.com/Dartvauder/NeuroSandboxWebUI.git
+----> Download SUCCESS: id: 334348676 index:7 lang:Jupyter Notebook url:https://github.com/yonycherkos/Applied-Data-Science-with-Python-Specialization.git
+----> Download SUCCESS: id: 166771428 index:8 lang:Python url:https://github.com/PacktPublishing/Python-Network-Programming.git
+----> Download SUCCESS: id: 302562347 index:9 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 107759560 index:10 lang:Jupyter Notebook url:https://github.com/navjindervirdee/neural-networks.git
+----> Download SUCCESS: id: 316785160 index:11 lang:Python url:https://github.com/hrichharms/AlbiPy.git
+----> Download SUCCESS: id: 22460493 index:12 lang:Python url:https://github.com/sajjanbh/WLAN-Monitoring.git
+getrepos://keyword:software lang:Python nbr: 3 
+----> Download SUCCESS: id: 630624519 index:1 lang:Python url:https://github.com/alantech/marsha.git
+----> Download SUCCESS: id: 330964963 index:2 lang:C++ url:https://github.com/Algo-Phantoms/Algo-Tree.git
+----> Download SUCCESS: id: 293884133 index:3 lang:Python url:https://github.com/JoeyHendricks/python-benchmark-harness.git
+----> Download SUCCESS: id: 130693503 index:4 lang:Python url:https://github.com/eellak/gsoc2018-spacy.git
+----> Download SUCCESS: id: 755911780 index:5 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 17301729 index:6 lang:Python url:https://github.com/openeventdata/petrarch.git
+----> Download SUCCESS: id: 345204360 index:7 lang:Python url:https://github.com/farlleyferreira/ms-fastapi-template.git
+----> Download SUCCESS: id: 87590323 index:8 lang:Jupyter Notebook url:https://github.com/elswork/rpi-tensorflow.git
+----> Download SUCCESS: id: 117672261 index:9 lang:Python url:https://github.com/ginking/archimedes-1.git
+----> Download SUCCESS: id: 2302872 index:10 lang:Python url:https://github.com/cidles/poio-analyzer.git
+getrepos://keyword:gestion lang:Python nbr: 4 
+
+
+Crawl session at 2025:06:18:17:46
+----------------------------------- 
+getrepos://keyword:ai lang:Python nbr: 1 
+----> Download SUCCESS: id: 665164787 index:1 lang:Jupyter Notebook url:https://github.com/benman1/generative_ai_with_langchain.git
+----> Download SUCCESS: id: 275947506 index:2 lang:Jupyter Notebook url:https://github.com/FreeBirdsCrew/AI_ChatBot_Python.git
+
+
+Crawl session at 2025:06:18:17:47
+----------------------------------- 
+getrepos://keyword:ai lang:Python nbr: 1 
+----> Download SUCCESS: id: 665164787 index:1 lang:Jupyter Notebook url:https://github.com/benman1/generative_ai_with_langchain.git
+----> Download SUCCESS: id: 275947506 index:2 lang:Jupyter Notebook url:https://github.com/FreeBirdsCrew/AI_ChatBot_Python.git
+----> Download SUCCESS: id: 894807433 index:3 lang:Python url:https://github.com/brandondocusen/CntxtPY.git
+----> Download SUCCESS: id: 673241446 index:4 lang:Python url:https://github.com/Boburmirzo/chatgpt-api-python-sales.git
+----> Download SUCCESS: id: 172238351 index:5 lang:Python url:https://github.com/keshavsingh4522/Python.git
+----> Download SUCCESS: id: 899383871 index:6 lang:Python url:https://github.com/gradion-ai/freeact.git
+----> Download SUCCESS: id: 755911780 index:7 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 302562347 index:8 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 947913624 index:9 lang:Python url:https://github.com/shibing624/deep-research.git
+----> Download SUCCESS: id: 687066886 index:10 lang:Jupyter Notebook url:https://github.com/FiammettaC/AI-for-Chemical-Engineers.git
+----> Download SUCCESS: id: 435640635 index:11 lang:Python url:https://github.com/oneai-nlp/oneai-python.git
+----> Download SUCCESS: id: 975508361 index:12 lang:Python url:https://github.com/georgekhananaev/excel-ai-assistant.git
+----> Download SUCCESS: id: 813659973 index:13 lang:Python url:https://github.com/badrex/emojeez.git
+getrepos://keyword:network lang:Python nbr: 2 
+----> Download SUCCESS: id: 1696822 index:1 lang:Python url:https://github.com/clips/pattern.git
+----> Download SUCCESS: id: 46979489 index:2 lang:Python url:https://github.com/sherjilozair/char-rnn-tensorflow.git
+----> Download SUCCESS: id: 57287024 index:3 lang:Python url:https://github.com/hunkim/word-rnn-tensorflow.git
+----> Download SUCCESS: id: 274472671 index:4 lang:Shell url:https://github.com/zszszszsz/.config.git
+----> Download SUCCESS: id: 634128785 index:5 lang:Jupyter Notebook url:https://github.com/AayushSameerShah/Neural-Net-Zero-to-Hero-with-Andrej.git
+----> Download SUCCESS: id: 772510661 index:6 lang:Python url:https://github.com/Dartvauder/NeuroSandboxWebUI.git
+----> Download SUCCESS: id: 334348676 index:7 lang:Jupyter Notebook url:https://github.com/yonycherkos/Applied-Data-Science-with-Python-Specialization.git
+----> Download SUCCESS: id: 166771428 index:8 lang:Python url:https://github.com/PacktPublishing/Python-Network-Programming.git
+----> Download SUCCESS: id: 302562347 index:9 lang:Python url:https://github.com/JasonFengGit/RNN-Language-Classifier.git
+----> Download SUCCESS: id: 107759560 index:10 lang:Jupyter Notebook url:https://github.com/navjindervirdee/neural-networks.git
+----> Download SUCCESS: id: 316785160 index:11 lang:Python url:https://github.com/hrichharms/AlbiPy.git
+----> Download SUCCESS: id: 22460493 index:12 lang:Python url:https://github.com/sajjanbh/WLAN-Monitoring.git
+getrepos://keyword:software lang:Python nbr: 3 
+----> Download SUCCESS: id: 630624519 index:1 lang:Python url:https://github.com/alantech/marsha.git
+----> Download SUCCESS: id: 330964963 index:2 lang:C++ url:https://github.com/Algo-Phantoms/Algo-Tree.git
+----> Download SUCCESS: id: 293884133 index:3 lang:Python url:https://github.com/JoeyHendricks/python-benchmark-harness.git
+----> Download SUCCESS: id: 130693503 index:4 lang:Python url:https://github.com/eellak/gsoc2018-spacy.git
+----> Download SUCCESS: id: 755911780 index:5 lang:Python url:https://github.com/jeanjerome/ai-agile-team.git
+----> Download SUCCESS: id: 17301729 index:6 lang:Python url:https://github.com/openeventdata/petrarch.git
+----> Download SUCCESS: id: 345204360 index:7 lang:Python url:https://github.com/farlleyferreira/ms-fastapi-template.git
+----> Download SUCCESS: id: 87590323 index:8 lang:Jupyter Notebook url:https://github.com/elswork/rpi-tensorflow.git
+----> Download SUCCESS: id: 117672261 index:9 lang:Python url:https://github.com/ginking/archimedes-1.git
+----> Download SUCCESS: id: 2302872 index:10 lang:Python url:https://github.com/cidles/poio-analyzer.git
+getrepos://keyword:gestion lang:Python nbr: 4 
