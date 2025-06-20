@@ -2,9 +2,11 @@
 ### This repo helps for training AI models with code.
 
 > [!CAUTION]
-> This project is not available for production and there is certainly a lot of bugs.
+> Be careful.
+> If you don't test this project before use you can cleanly destroy your computer.
+> The project can download To of data and if you have not a complete datacenter, you may not have enough disk space...
+> To test the project I recommend to use the provided lists with only two or three words, and you can also comment the 95th line of crawler.py to deactivate the download.
 
-It is now in development and does not working.
 ### Project structure
 ```tree
 /README.md
@@ -63,6 +65,31 @@ compilers.json file structure :
 }
 ```
 
+### Use
+See this:
+```plaintext
+$ python3 main.py --help
+Git verification O.K.
+usage: main.py [-h] [--debug] [--config_file CONFIG_FILE]
+               [--compilation_config_file COMPILATION_CONFIG_FILE]
+               {config,crawl} ...
+
+AI Trainer Configuration
+
+positional arguments:
+  {config,crawl}
+    config              Modify configuration
+    crawl               Start crawl
+
+options:
+  -h, --help            show this help message and exit
+  --debug, -d           Run in debug mode.
+  --config_file, -cfg CONFIG_FILE
+                        Custom config file path.
+  --compilation_config_file COMPILATION_CONFIG_FILE
+                        Custom compilation config file path.
+```
+
 ### Installing
 No build required.
 ```bash
@@ -80,5 +107,5 @@ python3 main.py --help
 ```
 Example usage:
 ```bash
-python3 main.py crawl --token "ghp_TOKEN_GITHUB" --keywords "main-testing-keywords.txt"
+python3 main.py --debug --compilation_config_file "cfg/compilation-testing.json" crawl --token "ghp_TOKEN_GITHUB" --keywords "main-testing-keywords.txt"
 ```
